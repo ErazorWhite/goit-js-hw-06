@@ -16,7 +16,7 @@ categorieHeaders.forEach((categorie, index) =>
 );
 
 console.log(`Number of categories: ${categoriesHtmlParser.length}`);
-categoriesHtmlParser.forEach((categorieHtmlParsed) => {
-  console.log(`Category: ${categorieHtmlParsed.headerName}`);
-  console.log(`Elements: ${categorieHtmlParsed.itemsCount}`);
+categoriesHtmlParser.forEach(({ headerName, itemsCount }) => {
+  console.log(`Category: ${headerName}`);
+  console.log(`Elements: ${itemsCount}`);
 });
