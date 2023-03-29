@@ -1,22 +1,7 @@
-const categoriesHtmlParser = [
-  // { headerName: "testName", itemsCount: 5 }
-];
-// Parser for HTML code. Stores array with two arguments.
-// 1. headerName - name of category. Selector: "li.item > h2"
-// 2. itemsCount - count of li items deep in the #categories. Selector: "li.item > ul".children.length
+const categories = document.querySelectorAll("li.item");
 
-const categorieHeaders = document.querySelectorAll("li.item > h2");
-
-categorieHeaders.forEach((categorie, index) =>
-  categoriesHtmlParser.push({
-    headerName: categorie.textContent,
-    itemsCount:
-      document.querySelectorAll("li.item > ul")[index].children.length,
-  })
-);
-
-console.log(`Number of categories: ${categoriesHtmlParser.length}`);
-categoriesHtmlParser.forEach(({ headerName, itemsCount }) => {
-  console.log(`Category: ${headerName}`);
-  console.log(`Elements: ${itemsCount}`);
+console.log(`Number of categories: ${categories.length}`);
+categories.forEach((category) => {
+  console.log(`Category: ${category.children[0].textContent}`);
+  console.log(`Elements: ${category.children[1].children.length}`);
 });
